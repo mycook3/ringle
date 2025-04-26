@@ -3,7 +3,8 @@ package com.ringle.lesson_api.lesson.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 @Entity
 @Getter
@@ -26,8 +27,17 @@ public class Availability {
     private User tutor;
 
     @Column(nullable = false)
-    private LocalDateTime startTime;
+    private LocalDate date;
+
+    @Column(name = "start_time", nullable = false)
+    private LocalTime startTime;
 
     @Column(nullable = false)
-    private Integer durationMinutes;  // 항상 30분
+    private Integer durationMinutes;
+
+    public Availability(User tutor, LocalDate Date, LocalTime startTime) {
+        this.tutor = tutor;
+        this.date = Date;
+        this.startTime = startTime;
+    }
 }
