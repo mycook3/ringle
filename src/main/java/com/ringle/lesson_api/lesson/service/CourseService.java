@@ -8,12 +8,17 @@ import java.util.List;
 
 public interface CourseService {
     /**
-     * @param : 날짜, 수업 시간
-     *          date : 원하는 날짜
-     *          durationMinutes : 수업 시간
-     *
-     * @return 수업 가능한 시간대
+     * @param  reqGetAvailableTimeDto : 원하는 날짜, 수업 시간
+     * @return 수업 가능한 시간 목록
      */
-    public List<LocalTime> getAvailableTimes(ReqGetAvailableTimeDto reqGetAvailableTimeDto);
+    List<LocalTime> getAvailableTimes(ReqGetAvailableTimeDto reqGetAvailableTimeDto);
+    /**
+     * @param reqGetTutorsDto : 원하는 날짜, 시작 시간, 수업 시간
+     * @return 수업 신청 가능한 튜터 목록
+     */
     List<ResTutorDto> getAvailableTutors(ReqGetTutorsDto reqGetTutorsDto);
+    /**
+     * @param reqCreateCourseDto : 신청하는 학생 ID, 튜터 ID, 수업 날짜, 시작 시간, 수업 시간
+     */
+    void createCourse(ReqCreateCourseDto reqCreateCourseDto);
 }

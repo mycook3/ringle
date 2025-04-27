@@ -1,5 +1,6 @@
 package com.ringle.lesson_api.lesson.respository;
 
+import com.ringle.lesson_api.lesson.dto.ReqCreateCourseDto;
 import com.ringle.lesson_api.lesson.entity.Availability;
 import com.ringle.lesson_api.lesson.entity.Course;
 import com.ringle.lesson_api.lesson.entity.User;

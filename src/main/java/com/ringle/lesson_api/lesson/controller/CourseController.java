@@ -34,4 +34,10 @@ public class CourseController {
     public List<ResTutorDto> getAvailableTutors(@Valid @ModelAttribute ReqGetTutorsDto request) {
         return courseService.getAvailableTutors(request);
     }
+
+    @PostMapping
+    public ResponseEntity<Void> createCourse(@Valid @RequestBody ReqCreateCourseDto request) {
+        courseService.createCourse(request);
+        return ResponseEntity.status(HttpStatus.CREATED).build();
+    }
 }
