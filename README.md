@@ -4,7 +4,7 @@
 링글 Tech팀 Backend 과제
 
 ## 개발 기간
-<br> 2025.04.25 - 2025.04.27
+2025.04.25 - 2025.04.27
 
 ## 기능
 1. 튜터가 이용할 API
@@ -22,5 +22,5 @@
 <img src="https://img.shields.io/badge/MySql-003545?style=flat-square&logo=Mysql&logoColor=white"/>
 <img src="https://img.shields.io/badge/Postman-FF6C37?style=flat-square&logo=Postman&logoColor=white"/>
 <br>
-Java - 17
-Spring Boot - 3.4.2.5
+Java - 17 <br>
+Spring Boot - 3.4.5
