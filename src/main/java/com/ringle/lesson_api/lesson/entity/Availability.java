@@ -18,7 +18,13 @@ import java.time.LocalTime;
         }
 )
 public class Availability {
-
+    /**
+     * id : pk
+     * tutor : 강사
+     * date : 날짜
+     * startTime : 시작하는 시간
+     * durationMinutes : 수업 시간
+     */
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 

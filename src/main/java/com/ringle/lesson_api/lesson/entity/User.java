@@ -34,11 +34,4 @@ public class User {
     @Enumerated(EnumType.STRING)
     @Column(name = "role", nullable = false)
     private Role role;
-
-    public User(Long UserId, String username, String email, Role role) {
-        this.id = UserId;
-        this.username = username;
-        this.email = email;
-        this.role = role;
-    }
 }

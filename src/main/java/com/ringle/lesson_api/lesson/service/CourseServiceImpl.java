@@ -188,4 +188,16 @@ public class CourseServiceImpl implements CourseService {
             throw new IllegalArgumentException("수업 길이는 30분 또는 60분만 가능합니다.");
         }
     }
+
+    public List<ResCourseDto> getMyCourses(Long studentId) {
+        List<Course> courses = courseRepository.findAllByStudentIdOrderByAvailabilityDateAscAvailabilityStartTimeAsc(studentId);
+
+        return courses.stream()
+                .map(course -> new ResCourseDto(
+                        course.getAvailability().getDate(),
+                        course.getAvailability().getStartTime(),
+                        course.getAvailability().getTutor().getUsername()
+                ))
+                .toList();
+    }
 }

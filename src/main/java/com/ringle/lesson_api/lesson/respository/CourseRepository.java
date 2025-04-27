@@ -19,4 +19,7 @@ public interface CourseRepository extends JpaRepository<Course, Long> {
     List<Availability> findAllReservedAvailabilities(@Param("date") LocalDate date);
 
     boolean existsByAvailability(Availability availability);
+
+    // 학생 ID를 기준으로 날짜, 시작 시간 순으로 조회
+    List<Course> findAllByStudentIdOrderByAvailabilityDateAscAvailabilityStartTimeAsc(Long studentId);
 }

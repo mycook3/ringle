@@ -40,4 +40,9 @@ public class CourseController {
         courseService.createCourse(request);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
+
+    @GetMapping("/mine")
+    public List<ResCourseDto> getMyCourses(@RequestParam Long studentId) {
+        return courseService.getMyCourses(studentId);
+    }
 }

@@ -17,7 +17,12 @@ import java.time.LocalDateTime;
         }
 )
 public class Course {
-
+    /**
+     * id : pk
+     * student : 예약한 학생
+     * availability : 예약한 강의
+     * createdAt : 예약한 날짜
+     */
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
