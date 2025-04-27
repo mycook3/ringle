@@ -16,4 +16,6 @@ public interface CourseRepository extends JpaRepository<Course, Long> {
     // 날짜를 기준으로 예약된 강의 불러오기
     @Query("select c.availability from Course c where c.availability.date = :date")
     List<Availability> findAllReservedAvailabilities(@Param("date") LocalDate date);
+
+    boolean existsByAvailability(Availability availability);
 }

@@ -1,9 +1,9 @@
 package com.ringle.lesson_api.lesson.controller;
 
-import com.ringle.lesson_api.lesson.dto.ReqCreateAvailabilityDto;
-import com.ringle.lesson_api.lesson.dto.ReqDeleteAvailabilityDto;
+import com.ringle.lesson_api.lesson.dto.*;
 import com.ringle.lesson_api.lesson.service.AvailabilityService;
 import com.ringle.lesson_api.lesson.service.CourseService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
@@ -26,10 +26,12 @@ public class CourseController {
     }
 
     @GetMapping("/available-times")
-    public List<LocalTime> getAvailableTimes(
-            @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date,
-            @RequestParam Integer durationMinutes
-    ) {
-        return courseService.getAvailableTimes(date, durationMinutes);
+    public List<LocalTime> getAvailableTimes(@Valid @ModelAttribute ReqGetAvailableTimeDto request) {
+        return courseService.getAvailableTimes(request);
+    }
+
+    @GetMapping("/available-tutors")
+    public List<ResTutorDto> getAvailableTutors(@Valid @ModelAttribute ReqGetTutorsDto request) {
+        return courseService.getAvailableTutors(request);
     }
 }

@@ -18,14 +18,14 @@ public class AvailabilityController {
         return "Hello, tutor!";
     }
     @PostMapping
-    public ResponseEntity<Void> createAvailability(@RequestBody ReqCreateAvailabilityDto reqCreateAvailabilityDto) {
-        availabilityService.createAvailability(reqCreateAvailabilityDto);
+    public ResponseEntity<Void> createAvailability(@RequestBody ReqCreateAvailabilityDto request) {
+        availabilityService.createAvailability(request);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
     @DeleteMapping
-    public ResponseEntity<Void> deleteAvailability(@RequestBody ReqDeleteAvailabilityDto reqDeleteAvailabilityDto) {
-        availabilityService.deleteAvailability(reqDeleteAvailabilityDto);
+    public ResponseEntity<Void> deleteAvailability(@RequestBody ReqDeleteAvailabilityDto request) {
+        availabilityService.deleteAvailability(request);
         return ResponseEntity.noContent().build();
     }
 }

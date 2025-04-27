@@ -21,4 +21,6 @@ public interface AvailabilityRepository extends JpaRepository<Availability, Long
     List<Availability> findAllByTutorIdAndDateBetween(Long tutorId, LocalDate startDate, LocalDate endDate);
     // 날짜 기준으로 신청 가능한 수업 찾기
     List<Availability> findAllByDate(LocalDate date);
+
+    List<Availability> findAllByDateAndStartTime(LocalDate date, LocalTime startTime);
 }
